@@ -1,0 +1,28 @@
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    compileTestJava {
+        options.encoding = "UTF-8"
+    }
+
+    dependencies {
+        implementation "org.junit.jupiter:junit-jupiter-engine:5.8.1"
+        implementation "org.assertj:assertj-core:3.22.0"
+        implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+
+    }
+    test {
+        useJUnitPlatform()
+    }
+}
